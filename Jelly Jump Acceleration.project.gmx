@@ -24,6 +24,7 @@
     <sprite>sprites\sprt_p_wallcling</sprite>
     <sprite>sprites\sprt_goombafly</sprite>
     <sprite>sprites\sprt_goomba</sprite>
+    <sprite>sprites\sprt_boxcheck</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,9 +47,7 @@
     <object>objects\obj_goombafly</object>
     <object>objects\obj_goomba</object>
   </objects>
-  <timelines name="timelines">
-    <timeline>timelines\timeline0</timeline>
-  </timelines>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room2</room>
     <room>rooms\Home_Screen</room>

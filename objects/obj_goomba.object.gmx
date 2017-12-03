@@ -125,7 +125,11 @@ y += vvel
 //Enemy Collision
 if (place_meeting(x,y,obj_jelly))
 {
-
+    if (obj_jelly.y &lt; y-16)
+    {
+        with (obj_jelly) vvel = -bounceoff;
+        instance_destroy();
+    }
 }
 </string>
           </argument>

@@ -57,6 +57,8 @@ jumpsmax = 2; //maximum number of jumps
 move_lock = false; //is your direction locked from wall jumps
 grounded = false; //are you grounded
 wallpush = 5 //pushoff speed of wall
+//Enemies and bosses
+bounceoff = 5
 </string>
           </argument>
         </arguments>
