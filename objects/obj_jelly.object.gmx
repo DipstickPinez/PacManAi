@@ -136,58 +136,55 @@ alarm_set(0,-1);
 key_right = keyboard_check(vk_right); //checks are you pressing right
 key_left = -keyboard_check(vk_left); //chesks are you pressing left
 key_jump = keyboard_check_pressed(vk_up); //checks DID YOU PRESS up
+key_down = keyboard_check_pressed(vk_down); //did you press down
 //React to inputs
-if (vvel &lt; 10) vvel += grav;
-if move_lock = false
+if (vvel &lt; 10) vvel += grav; //gravity pulls you down until you hit max speed
+if move_lock = false //if move_lock is true, then no acceleration or direction changing.
 {
-move = key_left + key_right;
-accel = move * accelspd;
-if sign(move) != 0
+move = key_left + key_right; //what direction are you trying to go
+accel = move * accelspd; //calculate accel
+if sign(move) != 0 //if you are not trying to stand still
 {
-    if accelstart == 0
+    if accelstart == 0 //if you have not started acclerating
     {
-        vel = startvel * move;
-        accelstart = 1;
+        vel = startvel * move; //base velocity
+        accelstart = 1; //start accelerating
     }
-    if sign(vel) &lt;= 4
+    if abs(vel) &lt;= 6.5 //max speed either direction
     {
-        if accelstart == 1
+        if accelstart == 1 //have you started accelerating? If so, start accelerating
         {
             vel += accel;
         }
     }
 }
-if (key_right + key_left) = 1
-    {
-    directlast = 1;
-    }
-if (key_right + key_left) = -1
-    {
-    directlast = -1;
-    }
-if sign(vel) != 0
+if move != 0 //if you are not standing still
 {
-    if move == 0 or move == -sign(vel)
+    directlast = move //finds the last direction faced
+}
+if sign(vel) != 0 //if you are moving
+{
+    if move == 0 or move == -sign(vel) //but you are not inputting something or your speed is the opposite of the direction you inputted
     {
-    vel = 0
+    vel = 0 //set speed to 0
     }   
 }
-direct = move
-if sign(move) = 0
+direct = move //this is the constant direction
+if sign(move) = 0 //reset accelstart if you are not inputting
 {
 accelstart = 0
 }
 }
-if keyboard_check(vk_escape)
+if keyboard_check(vk_escape) //full game reset
     {
     game_restart();
     }
-if keyboard_check(ord("R"))
+if keyboard_check(ord("R")) //room reset
 {
 room_restart();
 }
 //Jump variables and double jumps
-if (place_meeting(x,y+1,obj_dirt))
+if (place_meeting(x,y+1,obj_dirt)) //reset variables if touching zero
 {
     grounded = true
     jumps = jumpsmax
@@ -195,30 +192,30 @@ if (place_meeting(x,y+1,obj_dirt))
 }
 else
 {
-grounded = false
+grounded = false //if not on ground, not grounded
 }
-if (key_jump) &amp;&amp; (jumps = 2)
+if (key_jump) &amp;&amp; (jumps = 2) //your first jump does normal height
 {
     jumps -= 1
     vvel = -jumpspeed;
 }
-else if (key_jump) &amp;&amp; (jumps = 1)
+else if (key_jump) &amp;&amp; (jumps = 1) //second jump does 0.75 normal height
 {
     jumps -= 1;
     vvel = -jumpspeed * 0.75
 }
-if (!place_meeting(x,y+1,obj_dirt)) &amp;&amp; (jumps == jumpsmax)
+if (!place_meeting(x,y+1,obj_dirt)) &amp;&amp; (jumps == jumpsmax) //if you walked off a platform without jumping, you lose a jump so you can't walk off then double jump
 {
     jumps --;
 }
 //Wall jump
-if (key_jump) and place_meeting(x+1,y,obj_dirt) and grounded = false
+if (key_jump) and place_meeting(x+1,y,obj_dirt) and grounded = false //if you are not on the ground and the wall is directly to your right
 {
-    vvel = -jumpspeed * 0.5;
-    move = -1;
-    vel = move * wallpush
-    move_lock = true;
-    alarm_set(1,room_speed * 0.4);
+    vvel = -jumpspeed * 0.5; //halved vertical movement for wall jumps
+    move = -1; //move to the left
+    vel = move * wallpush //set your horizontal movement to wallpush, so speed
+    move_lock = true; //lock so you don't accelerate or change directions
+    alarm_set(1,room_speed * 0.4); //amount of time you are pushed off, so distance according to speed
 }
 if (key_jump) and place_meeting(x-1,y,obj_dirt) and grounded = false
 {

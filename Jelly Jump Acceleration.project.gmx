@@ -25,6 +25,12 @@
     <sprite>sprites\sprt_goombafly</sprite>
     <sprite>sprites\sprt_goomba</sprite>
     <sprite>sprites\sprt_boxcheck</sprite>
+    <sprite>sprites\sprt_tutbub</sprite>
+    <sprite>sprites\sprt_lev1bub</sprite>
+    <sprite>sprites\sprt_lev2bub</sprite>
+    <sprite>sprites\sprt_bosslevbub</sprite>
+    <sprite>sprites\sprt_pipered</sprite>
+    <sprite>sprites\sprt_pipegreen</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,12 +52,21 @@
     <object>objects\obj_coin</object>
     <object>objects\obj_goombafly</object>
     <object>objects\obj_goomba</object>
+    <object>objects\obj_jellyavatar</object>
+    <object>objects\obj_tutbub</object>
+    <object>objects\obj_lev1</object>
+    <object>objects\obj_lev2</object>
+    <object>objects\obj_bosslev</object>
+    <object>objects\obj_pipe2b</object>
+    <object>objects\obj_pipe12</object>
+    <object>objects\obj_pipet1</object>
   </objects>
   <timelines name="timelines"/>
   <rooms name="rooms">
+    <room>rooms\Level_select</room>
+    <room>rooms\room0</room>
     <room>rooms\room2</room>
     <room>rooms\Home_Screen</room>
-    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
