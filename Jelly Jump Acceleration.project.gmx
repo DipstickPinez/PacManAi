@@ -24,6 +24,9 @@
     <sprite>sprites\sprt_p_wallcling</sprite>
     <sprite>sprites\sprt_goombafly</sprite>
     <sprite>sprites\sprt_goomba</sprite>
+    <sprite>sprites\sprt_fullinvisboxcheck</sprite>
+    <sprite>sprites\sprt_invisboxcheck</sprite>
+    <sprite>sprites\sprt_playcheck</sprite>
     <sprite>sprites\sprt_boxcheck</sprite>
     <sprite>sprites\sprt_tutbub</sprite>
     <sprite>sprites\sprt_lev1bub</sprite>
@@ -38,9 +41,10 @@
     <script>scripts\isOver.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_testflatportal</object>
+    <object>objects\obj_bigportalthing</object>
     <object>objects\obj_portal</object>
     <object>objects\obj_border</object>
+    <object>objects\obj_superborder</object>
     <object>objects\obj_grass_upright</object>
     <object>objects\obj_grass_upleft</object>
     <object>objects\obj_grass_right</object>
@@ -57,16 +61,18 @@
     <object>objects\obj_lev1</object>
     <object>objects\obj_lev2</object>
     <object>objects\obj_bosslev</object>
-    <object>objects\obj_pipe2b</object>
-    <object>objects\obj_pipe12</object>
     <object>objects\obj_pipet1</object>
+    <object>objects\obj_pipe12</object>
+    <object>objects\obj_pipe2b</object>
+    <object>objects\obj_initializer</object>
+    <object>objects\obj_play</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\Level_select</room>
-    <room>rooms\room0</room>
-    <room>rooms\room2</room>
+    <room>rooms\Intializer</room>
     <room>rooms\Home_Screen</room>
+    <room>rooms\Level_1</room>
+    <room>rooms\Testworld</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
