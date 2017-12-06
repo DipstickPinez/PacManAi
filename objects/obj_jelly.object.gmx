@@ -194,12 +194,12 @@ else
 {
 grounded = false //if not on ground, not grounded
 }
-if (key_jump) &amp;&amp; (jumps = 2) //your first jump does normal height
+if (key_jump) &amp;&amp; (jumps = 2) &amp;&amp; (ded = 0) //your first jump does normal height
 {
     jumps -= 1
     vvel = -jumpspeed;
 }
-else if (key_jump) &amp;&amp; (jumps = 1) //second jump does 0.75 normal height
+else if (key_jump) &amp;&amp; (jumps = 1) &amp;&amp; (ded = 0) //second jump does 0.75 normal height
 {
     jumps -= 1;
     vvel = -jumpspeed * 0.75

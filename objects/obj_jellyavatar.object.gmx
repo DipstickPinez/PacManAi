@@ -32,6 +32,31 @@ depth = -1
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0] = -1
+room_goto(Level_1)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -55,31 +80,34 @@ key_left = -keyboard_check_pressed(vk_left);
 key_down = keyboard_check_pressed(vk_down);
 right = 0
 left = 0
+//Check border collisions
+if (place_meeting(x+256,y,obj_lev1bord)) or (place_meeting(x+256,y,obj_lev2bord)) or (place_meeting(x+256,y,obj_bossbord)) or (place_meeting(x+256,y,obj_superborder))
+{
+rightyay = 0
+}
+else rightyay = 1
+if (place_meeting(x-256,y,obj_lev1bord)) or (place_meeting(x-256,y,obj_lev2bord)) or (place_meeting(x-256,y,obj_bossbord)) or (place_meeting(x-256,y,obj_superborder))
+{
+leftyay = 0
+}
+else leftyay = 1
 //React to inputs
 move = key_right + key_left; //check what direction you input
-chek = 0
-yay = 0
-wah = 1
 if move = 1
 {
-right = 1
-}
-if right = 1
-{
-    for (chek = 0; yay = 1 or wah = 1; chek += 1)
+    if rightyay == 1
     {
-        if (!place_meeting(x+chek,y,obj_border))
-        {
-        x += chek
-        yay = 1
-        chek = 0
-        }
-        if (place_meeting(x+chek,y,obj_superborder))
-        {
-        wah = 1
-        }
+    x += 256
     }
-} 
+}
+if move = -1
+{
+    if leftyay == 1
+    {
+    x -= 256
+    }
+}
+//Teleportation
 </string>
           </argument>
         </arguments>

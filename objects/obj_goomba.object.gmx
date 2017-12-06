@@ -130,6 +130,14 @@ if (place_meeting(x,y,obj_jelly))
         with (obj_jelly) vvel = -bounceoff;
         instance_destroy();
     }
+    else
+    {
+        with (obj_jelly) 
+        if ded != 2
+        {
+        ded = 1
+        }
+    }
 }
 </string>
           </argument>
