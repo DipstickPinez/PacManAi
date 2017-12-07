@@ -58,6 +58,7 @@
     <object>objects\obj_lava</object>
     <object>objects\obj_coin</object>
     <object>objects\obj_goombafly</object>
+    <object>objects\obj_goombascared</object>
     <object>objects\obj_goomba</object>
     <object>objects\obj_jellyavatar</object>
     <object>objects\obj_tutbub</object>

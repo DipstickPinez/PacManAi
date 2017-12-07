@@ -32,6 +32,61 @@ movespeed = 2.5;
 grav = 0.2;
 vel = 0;
 vvel = 0;
+heightsscared = 0
+hitbox = 32
+
+alarm[0] = room_speed * 0.25
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//face right
+image_xscale = 1
+alarm[0] = room_speed * 0.25
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//face left
+image_xscale = -1
+alarm[1] = room_speed * 0.25
+
 </string>
           </argument>
         </arguments>
@@ -76,6 +131,9 @@ if (place_meeting(x,y+vvel,obj_dirt)) //same as horizontal
         y += sign(vvel); //same as horizonatal
     }
     vvel = 0; //no direction reverse, but otherwise the same
+    
+    if (heightsscared) &amp;&amp; !position_meeting(x+(hitbox/2)*dir, y+(hitbox/2), obj_dirt) {
+    dir *= -1; }
 }
 
 //Diagonal collision
@@ -121,7 +179,6 @@ if (place_meeting(x+vel,y+vvel,obj_border))
 }
 x += vel
 y += vvel
-
 //Enemy Collision
 if (place_meeting(x,y,obj_jelly))
 {
