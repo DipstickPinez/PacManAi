@@ -32,7 +32,7 @@ vsp = 0; //replaced with vvel
 movespeed = 4; //how fast you move; set variable
 directlast = 0; //which direction you are facing last 1 = right
 direct = 0 //current direction
-ded = 0; //r u ded or not
+global.ded = 0; //r u ded or not
 alarm_set(0,-1);
 
 //acceleration and jumps
@@ -107,7 +107,8 @@ alarm_set(1,-1)
           <argument>
             <kind>1</kind>
             <string>///ded sprite alarm
-room_restart(); 
+show_debug_message("u ded m8")
+room_restart()
 alarm_set(0,-1);
 </string>
           </argument>
@@ -138,7 +139,8 @@ key_left = -keyboard_check(vk_left); //chesks are you pressing left
 key_jump = keyboard_check_pressed(vk_up); //checks DID YOU PRESS up
 key_down = keyboard_check_pressed(vk_down); //did you press down
 //React to inputs
-if (vvel &lt; 10) vvel += grav; //gravity pulls you down until you hit max speed
+if global.ded = 0 {
+if (vvel &lt; 10) vvel += grav; } //gravity pulls you down until you hit max speed
 if move_lock = false //if move_lock is true, then no acceleration or direction changing.
 {
 move = key_left + key_right; //what direction are you trying to go
@@ -194,12 +196,12 @@ else
 {
 grounded = false //if not on ground, not grounded
 }
-if (key_jump) &amp;&amp; (jumps = 2) &amp;&amp; (ded = 0) //your first jump does normal height
+if (key_jump) &amp;&amp; (jumps = 2) &amp;&amp; (global.ded = 0) //your first jump does normal height
 {
     jumps -= 1
     vvel = -jumpspeed;
 }
-else if (key_jump) &amp;&amp; (jumps = 1) &amp;&amp; (ded = 0) //second jump does 0.75 normal height
+else if (key_jump) &amp;&amp; (jumps = 1) &amp;&amp; (global.ded = 0) //second jump does 0.75 normal height
 {
     jumps -= 1;
     vvel = -jumpspeed * 0.75
@@ -217,29 +219,29 @@ if (key_jump) and place_meeting(x+1,y,obj_dirt) and grounded = false //if you ar
     move_lock = true; //lock so you don't accelerate or change directions
     alarm_set(1,room_speed * 0.4); //amount of time you are pushed off, so distance according to speed
 }
-if (key_jump) and place_meeting(x-1,y,obj_dirt) and grounded = false
+if (key_jump) and place_meeting(x-1,y,obj_dirt) and grounded = false //if you are not touching the ground and the wall is on your left and pressing jump
 {
-    vvel = -jumpspeed * 0.5;
-    move = 1;
-    vel = move * wallpush
-    move_lock = true;
-    alarm_set(1,room_speed * 0.4);
+    vvel = -jumpspeed * 0.5; //halved vertical speed
+    move = 1; //move right
+    vel = move * wallpush //move horizontally at wallpush speed
+    move_lock = true; //lock your direction changing and acceleration
+    alarm_set(1,room_speed * 0.4); //lock movement for 0.4 seconds (change time for more distance pushed away)
 }
 //Horizontal Collision
-if (place_meeting(x+vel,y,obj_dirt))
+if (place_meeting(x+vel,y,obj_dirt)) //if you would be in the dirt next step horizontally
 {
-    while(!place_meeting(x+sign(vel),y,obj_dirt))
+    while(!place_meeting(x+sign(vel),y,obj_dirt)) //but not right next to the wall
     {
-        x += sign(vel);
+        x += sign(vel); //move pixel by pixel
     }
-    vel = 0
+    vel = 0 //if directly next to wall, don't move
 }
 //if (place_meeting(x,y+1,obj_dirt))
 //{
 //    vvel = ((startjumpspd + (jumpvel - 1) * 0.5) * -key_jump);
 //}
 //Vertical Collision
-if (place_meeting(x,y+vvel,obj_dirt))
+if (place_meeting(x,y+vvel,obj_dirt)) //look above but use vertical movement
 {
     while(!place_meeting(x,y+sign(vvel),obj_dirt))
     {
@@ -288,9 +290,9 @@ if(place_meeting(x+vel,y+vvel,obj_border))
 // When you get rekt
 if (place_meeting(x,y+vvel,obj_lava))
 {
-    if ded == 0
+    if global.ded == 0
     {
-    ded = 1
+    global.ded = 1
     }
     while(!place_meeting(x,y+sign(vvel),obj_lava))
     {
@@ -299,14 +301,16 @@ if (place_meeting(x,y+vvel,obj_lava))
     vvel = 0;
 }
 
-if ded == 1
+if global.ded == 1
     {
+    show_debug_message("U bout 2 die m8")
     alarm_set(0,room_speed);
-    ded = 2;
+    global.ded = 2;
     }
-if ded != 0
+if global.ded != 0
 {
 vel = 0
+vvel = 0
 }
 //Idle, Jump, Fall Sprites
 if (move!=0) image_xscale = move;
@@ -339,6 +343,13 @@ y += vvel;
 //if (place_meeting(x,y+1, obj_lava))
 //{
 //room transfer
+
+if place_meeting(x, y, obj_goomba) {
+    show_debug_message("ded m8")
+    if global.ded = 0 {
+        global.ded = 1
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -81,12 +81,12 @@ key_down = keyboard_check_pressed(vk_down);
 right = 0
 left = 0
 //Check border collisions
-if (place_meeting(x+256,y,obj_lev1bord)) or (place_meeting(x+256,y,obj_lev2bord)) or (place_meeting(x+256,y,obj_bossbord)) or (place_meeting(x+256,y,obj_superborder))
+if (place_meeting(x+320,y,obj_lev1bord)) or (place_meeting(x+320,y,obj_lev2bord)) or (place_meeting(x+320,y,obj_bossbord)) or (place_meeting(x+320,y,obj_superborder))
 {
 rightyay = 0
 }
 else rightyay = 1
-if (place_meeting(x-256,y,obj_lev1bord)) or (place_meeting(x-256,y,obj_lev2bord)) or (place_meeting(x-256,y,obj_bossbord)) or (place_meeting(x-256,y,obj_superborder))
+if (place_meeting(x-384,y,obj_lev1bord)) or (place_meeting(x-384,y,obj_lev2bord)) or (place_meeting(x-320,y,obj_bossbord)) or (place_meeting(x-320,y,obj_superborder))
 {
 leftyay = 0
 }
@@ -97,17 +97,25 @@ if move = 1
 {
     if rightyay == 1
     {
-    x += 256
+    x += 384
     }
 }
 if move = -1
 {
     if leftyay == 1
     {
-    x -= 256
+    x -= 384
     }
 }
 //Teleportation
+if key_down &amp;&amp; (place_meeting(x,y,obj_tutlev)) {
+room_goto(Tutorial) }
+if key_down &amp;&amp; (place_meeting(x,y,obj_lev1)) {
+room_goto(Level_1) }
+if key_down &amp;&amp; (place_meeting(x,y,obj_lev2)) {
+room_goto(Level_2) }
+if key_down &amp;&amp; (place_meeting(x,y,obj_bosslev)) {
+room_goto(BossLevel) }
 </string>
           </argument>
         </arguments>

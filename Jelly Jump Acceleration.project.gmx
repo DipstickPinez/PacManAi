@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprt_coin_spin</sprite>
+    <sprite>sprites\sprt_coin_flash</sprite>
     <sprite>sprites\sprt_grass_upright</sprite>
     <sprite>sprites\sprt_grass_upleft</sprite>
     <sprite>sprites\sprt_grass_right</sprite>
@@ -60,25 +61,26 @@
     <object>objects\obj_goombafly</object>
     <object>objects\obj_goomba</object>
     <object>objects\obj_jellyavatar</object>
-    <object>objects\obj_tutbub</object>
+    <object>objects\obj_tutlev</object>
     <object>objects\obj_lev1</object>
     <object>objects\obj_lev2</object>
     <object>objects\obj_bosslev</object>
     <object>objects\obj_pipet1</object>
     <object>objects\obj_pipe12</object>
-    <object>objects\obj_pipe2b</object>
+    <object>objects\obj_pipe1b</object>
     <object>objects\obj_initializer</object>
     <object>objects\obj_play</object>
+    <object>objects\obj_maximontut</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Testworld</room>
-    <room>rooms\Level_1</room>
     <room>rooms\Intializer</room>
     <room>rooms\Home_Screen</room>
     <room>rooms\Level_select</room>
     <room>rooms\Tutorial</room>
+    <room>rooms\Level_1</room>
     <room>rooms\Level_2</room>
     <room>rooms\BossLevel</room>
+    <room>rooms\Testworld</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

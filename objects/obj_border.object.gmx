@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = -1
-mask_index = sprt_border
+            <string>sprite_index = -1 //no sprite
+mask_index = sprt_border //keeps the hitbox good
 </string>
           </argument>
         </arguments>

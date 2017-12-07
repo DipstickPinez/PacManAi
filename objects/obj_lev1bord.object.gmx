@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.tutdone = 1
+            <string>if global.tutdone = 1 //if tutorial is done destroy border so jelly avatar can move
 {
 instance_destroy()
 }
-sprite_index = -1
-mask_index = sprt_border
+sprite_index = -1 //no sprite
+mask_index = sprt_border //keeps the hitbox good
 </string>
           </argument>
         </arguments>

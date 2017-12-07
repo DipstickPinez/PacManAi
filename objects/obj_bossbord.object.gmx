@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.lev2done = 1
+            <string>if global.lev1done = 1 //if level 2 is done destroy border so jelly avatar can move
 {
 instance_destroy()
 }
-sprite_index = -1
-mask_index = sprt_border
-
+sprite_index = -1 //no sprite
+mask_index = sprt_border //keeps the hitbox good
 </string>
           </argument>
         </arguments>

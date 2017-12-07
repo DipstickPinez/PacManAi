@@ -14,7 +14,8 @@
 global.tutdone = 0;
 global.lev1done = 0;
 global.lev2done = 0;
-global.bossdone = 0;</code>
+global.bossdone = 0;
+room_goto(Home_Screen)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
