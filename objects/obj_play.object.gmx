@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isOver(obj_play,0,0,0,0) = true &amp;&amp; mouse_check_button_pressed(mb_left)
+            <string>if isOver(obj_play) = true &amp;&amp; mouse_check_button_pressed(mb_left)
 {
+sound_play(snd_click)
 room_goto(Level_select)
 } 
 </string>

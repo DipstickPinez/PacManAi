@@ -287,6 +287,14 @@ if(place_meeting(x+vel,y+vvel,obj_border))
     vel = 0;
     vvel = 0;
 }
+if (x+vel &lt;= view_xview[0]+16)
+{
+    while(x+sign(vel) = view_xview+16)
+    {
+    x += sign(vel)
+    }
+    vel = 0
+}
 // When you get rekt
 if (place_meeting(x,y+vvel,obj_lava))
 {
