@@ -59,6 +59,7 @@ if (place_meeting(x,y - sprite_height/2 - 2, obj_jelly)) {
     if global.ded = 0 {
     show_debug_message("bounce detected");
     with (obj_jelly) vvel = -bounceoff;
+    sound_play(snd_boing)
     instance_destroy();
     }
 }
@@ -89,6 +90,7 @@ if (place_meeting(x,y - sprite_height/2 - 2, obj_jelly)) {
 vel = dir * movespeed; //movement side to side
 vvel += grav; //affected by gravity
 
+image_xscale = dir
 //Horizontal Collision 
 if (place_meeting(x+vel,y,obj_dirt)) //are you going to run into thing in the next step
 {
@@ -123,26 +125,26 @@ if (place_meeting(x+vel,y+vvel,obj_dirt)) //you get the idea
     vvel = 0;
 }
 //Border Collision
-if (place_meeting(x+vel,y,obj_border)) //does the same with borders
+if (place_meeting(x+vel,y,obj_superborder)) //does the same with borders
 {
-    while(!place_meeting(x+sign(vel),y,obj_border))
+    while(!place_meeting(x+sign(vel),y,obj_superborder))
     {
         x += sign(vel);
     }
     dir *= -1 
     vel = 0;
 }
-if (place_meeting(x,y+vvel,obj_border))
+if (place_meeting(x,y+vvel,obj_superborder))
 {
-    while(!place_meeting(x,y+sign(vvel),obj_border))
+    while(!place_meeting(x,y+sign(vvel),obj_superborder))
     {
         y += sign(vvel);
     }
     vvel = 0;
 }
-if (place_meeting(x+vel,y+vvel,obj_border))
+if (place_meeting(x+vel,y+vvel,obj_superborder))
 {
-    while(!place_meeting(x+sign(vel),y+sign(vvel),obj_border))
+    while(!place_meeting(x+sign(vel),y+sign(vvel),obj_superborder))
     {
         x+= sign(vel);
         y+= sign(vvel);

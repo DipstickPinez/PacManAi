@@ -198,11 +198,13 @@ grounded = false //if not on ground, not grounded
 }
 if (key_jump) &amp;&amp; (jumps = 2) &amp;&amp; (global.ded = 0) //your first jump does normal height
 {
+    sound_play(snd_jump);
     jumps -= 1
     vvel = -jumpspeed;
 }
 else if (key_jump) &amp;&amp; (jumps = 1) &amp;&amp; (global.ded = 0) //second jump does 0.75 normal height
 {
+    sound_play(snd_jump)
     jumps -= 1;
     vvel = -jumpspeed * 0.75
 }
@@ -213,7 +215,8 @@ if (!place_meeting(x,y+1,obj_dirt)) &amp;&amp; (jumps == jumpsmax) //if you walk
 //Wall jump
 if (key_jump) and place_meeting(x+1,y,obj_dirt) and grounded = false //if you are not on the ground and the wall is directly to your right
 {
-    vvel = -jumpspeed * 0.5; //halved vertical movement for wall jumps
+    sound_play(snd_jump)
+    vvel = -jumpspeed * 0.625; //halved vertical movement for wall jumps
     move = -1; //move to the left
     vel = move * wallpush //set your horizontal movement to wallpush, so speed
     move_lock = true; //lock so you don't accelerate or change directions
@@ -221,7 +224,8 @@ if (key_jump) and place_meeting(x+1,y,obj_dirt) and grounded = false //if you ar
 }
 if (key_jump) and place_meeting(x-1,y,obj_dirt) and grounded = false //if you are not touching the ground and the wall is on your left and pressing jump
 {
-    vvel = -jumpspeed * 0.5; //halved vertical speed
+    sound_play(snd_jump)
+    vvel = -jumpspeed * 0.625; //halved vertical speed
     move = 1; //move right
     vel = move * wallpush //move horizontally at wallpush speed
     move_lock = true; //lock your direction changing and acceleration
@@ -300,6 +304,7 @@ if (place_meeting(x,y+vvel,obj_lava))
 {
     if global.ded == 0
     {
+    sound_play(snd_ded)
     global.ded = 1
     }
     while(!place_meeting(x,y+sign(vvel),obj_lava))
@@ -340,7 +345,7 @@ if (place_meeting(x-1,y,obj_dirt)) &amp;&amp; (!place_meeting(x,y+1,obj_dirt))
 sprite_index = sprt_p_wallcling
 image_xscale = -1
 }
-if (place_meeting(x,y+1,obj_lava))
+if global.ded != 0
 {
 sprite_index = sprt_ded;
 image_xscale = 1;
@@ -355,6 +360,7 @@ y += vvel;
 if place_meeting(x, y, obj_goomba) {
     show_debug_message("ded m8")
     if global.ded = 0 {
+        sound_play(snd_ded)
         global.ded = 1
     }
 }

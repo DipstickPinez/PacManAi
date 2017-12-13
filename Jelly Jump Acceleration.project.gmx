@@ -6,6 +6,10 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_click</sound>
+    <sound>sound\snd_ded</sound>
+    <sound>sound\snd_jump</sound>
+    <sound>sound\snd_portal</sound>
+    <sound>sound\snd_boing</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprt_coin_spin</sprite>
@@ -72,7 +76,9 @@
     <object>objects\obj_pipe1b</object>
     <object>objects\obj_initializer</object>
     <object>objects\obj_play</object>
+    <object>objects\obj_error404</object>
     <object>objects\obj_cameratut</object>
+    <object>objects\obj_titlenamething</object>
     <object>objects\obj_maximontut</object>
   </objects>
   <rooms name="rooms">
