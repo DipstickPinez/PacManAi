@@ -32,6 +32,7 @@ movespeed = 2.5;
 grav = 0.2;
 vel = 0;
 vvel = 0;
+image_speed = 0.1
 </string>
           </argument>
         </arguments>

@@ -59,6 +59,8 @@ grounded = false; //are you grounded
 wallpush = 5 //pushoff speed of wall
 //Enemies and bosses
 bounceoff = 5
+
+image_speed = 0.1
 </string>
           </argument>
         </arguments>

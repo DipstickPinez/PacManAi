@@ -51,13 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_jellyavatar" x="256" y="288" name="inst_FA8C0A44" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutlev" x="224" y="288" name="inst_39E4CB20" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lev1" x="992" y="288" name="inst_2BE799C6" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_jellyavatar" x="256" y="320" name="inst_FA8C0A44" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutlev" x="192" y="288" name="inst_39E4CB20" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lev1" x="960" y="288" name="inst_2BE799C6" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_superborder" x="-2848" y="96" name="inst_BE132492" locked="0" code="" scaleX="95" scaleY="15" colour="4294967295" rotation="0"/>
     <instance objName="obj_superborder" x="1216" y="64" name="inst_771955D0" locked="0" code="" scaleX="83.5800018310547" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pipet1" x="256" y="288" name="inst_512E8722" locked="0" code="" scaleX="24" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lev1bord" x="992" y="256" name="inst_2240A0DB" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pipet1" x="256" y="288" name="inst_512E8722" locked="0" code="" scaleX="24" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lev1bord" x="960" y="256" name="inst_2240A0DB" locked="0" code="" scaleX="4.12903213500977" scaleY="3.09677410125732" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>mask_index = sprt_boxcheck
 depth = -1
+image_speed = 0.1
+
 </string>
           </argument>
         </arguments>
