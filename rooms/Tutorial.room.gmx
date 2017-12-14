@@ -155,7 +155,7 @@
     <instance objName="obj_grass_up" x="1920" y="448" name="inst_37F0BFAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dirt" x="2048" y="448" name="inst_B94572DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dirt" x="2368" y="448" name="inst_5B4332EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_goomba" x="2112" y="432" name="inst_DE950CD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goomba" x="2112" y="416" name="inst_DE950CD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass_up" x="2400" y="448" name="inst_FCA86124" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass_up" x="2432" y="448" name="inst_DD38F667" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass_up" x="2464" y="448" name="inst_5212C44F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -30,7 +30,7 @@
 dir = -1;
 movespeed = 2.5;
 grav = 0.2;
-vel = 0;
+vel = 5;
 vvel = 0;
 image_speed = 0.1
 </string>
@@ -91,7 +91,7 @@ if (place_meeting(x,y - sprite_height/2 - 2, obj_jelly)) {
 vel = dir * movespeed; //movement side to side
 vvel += grav; //affected by gravity
 
-image_xscale = dir
+image_xscale = -dir
 //Horizontal Collision 
 if (place_meeting(x+vel,y,obj_dirt)) //are you going to run into thing in the next step
 {
